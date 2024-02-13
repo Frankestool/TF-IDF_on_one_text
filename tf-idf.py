@@ -63,5 +63,6 @@ df = pd.DataFrame(liste_mots_idf,columns = ["mot","idf","tf","tf_ajusté","tf_id
 mots_caracteristique =  df.sort_values("tf_idf",ascending=False).head(20)
 file.close()
 
+# We print a scatter plot of the differents words, with abscisse = adjusted_tf, ordonnee = idf , and the size is the représentation of the tf-idf
 fig = px.scatter(mots_caracteristique, x="tf_ajusté", y="idf",size="tf_idf", color="nombre_occurences",hover_name="mot")
 fig.show()
